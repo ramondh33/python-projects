@@ -24,7 +24,7 @@ This tool is designed to work with real-world log files and supports filtering, 
 ./log_analyzer.py access.log 
 ```
 
-or 
+or
 
 ```cli
 python log_analyzer.py access.log
@@ -41,7 +41,7 @@ Example:
 python log_analyzer.py /var/log/apache2/access.log
 ```
 
-### Show Top N Results:
+### Show Top N Results
 
 Limit output to the top N entries (Default is 5):
 
