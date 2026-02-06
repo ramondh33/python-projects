@@ -7,6 +7,26 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+# Function to parse a log line using regex (Pytest)
+def parse_log_line(line, pattern):
+    match = pattern.search(line)
+    if not match:
+        return None
+    return match.groupdict()
+
+# Function to check if status code is an error (4xx or 5xx) (Pytest)
+def is_error_status(status):
+    return 400 <= status < 600
+
+# Function to detect suspicious IPs based on request count threshold (Pytest)
+def detect_suspicious_ips(requests_per_ip, threshold):
+    return {
+        ip: count
+        for ip, count in requests_per_ip.items()
+        if count >= threshold
+    }
+
+# Main function for log analysis
 def main():
     '''Module for analyzing log files and extracting error messages.'''
 
